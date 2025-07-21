@@ -12,7 +12,7 @@ print("Guess a number between 1 and 10")   # prompt
 while True:                       # loop
     guess = int(input("Your guess: "))     # input
     if guess == secret:           # match
-        print("🎉 Correct! You win.")       # success
+        print(" Correct! You win.")       # success
         break                     # exit
     elif guess < secret:          # low
         print("Too low! Try again.")       # hint
