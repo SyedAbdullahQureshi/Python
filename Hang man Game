@@ -1,0 +1,28 @@
+import random
+
+word = ['cat' , 'dog', 'sun' ,'tree']
+word = random.choice(word)
+guessed = set()
+lives = 5
+print('Welcome to Hangman!')
+while lives > 0:
+    display = ''.join(letter if letter in guessed
+    else '_'for letter in word)
+    print(f'Word: {display} Lives: {lives}')
+    
+    if display == word:
+        print('YpuWon!')
+        break
+    guess = input('Guess a letter:').lower()
+    if len(guess) ==1 and guess.isalpha():
+      if guess in guessed:
+         print('Already guessed!')
+      else:
+          guessed.add(guess)
+          if guess not in word:
+              lives -=1
+              print('Wrong guess!')
+    else:
+        print('Enter a single letter!')
+if lives == 0:
+  print (f'Game Over! The word was Found{word}')
